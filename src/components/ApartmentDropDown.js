@@ -5,14 +5,10 @@ import { selectApt } from '../store/actions/apratmentActions';
 class ApartmentDropDown extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      apartmentType: '1 Bedroom',
-    };
   }
 
   handleChange = (event) => {
-    this.props.selectAppartment(event.target.value);
-    this.setState({ value: event.target.value });
+    this.props.selectAppartment(JSON.parse(event.target.value));
   };
 
   render() {
@@ -29,7 +25,7 @@ class ApartmentDropDown extends Component {
           >
             {images &&
               images.map((apt) => (
-                <option value={apt.type}>
+                <option value={JSON.stringify(apt)}>
                   {apt.type} &nbsp; {apt.price}
                 </option>
               ))}

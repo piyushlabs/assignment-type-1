@@ -22,16 +22,21 @@ export default class Carousel extends Component {
   }
 
   render() {
-    console.log(this.props, this.props.selectApartment);
+    let count =
+      this.props.images.findIndex(
+        (x) => x.file === this.props.selectApartment.file,
+      ) + 1;
+    count = count ? count : 1;
+    console.log(this.props, this.props.selectApartment, count);
     const settings = {
       dots: false,
       lazyLoad: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 2,
       slidesToScroll: 1,
-      initialSlide: 3,
-      autoplay: true,
+      initialSlide: count,
+      autoplay: false,
       autoplaySpeed: 6000,
       responsive: [
         {
