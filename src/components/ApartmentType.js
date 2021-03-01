@@ -1,14 +1,30 @@
 import React from 'react';
-import Carousel from 'src/components/Carousel/Carousel';
+import Carousel from './Carousel/Carousel';
+import { connect } from 'react-redux';
+import { selectApt } from '../store/actions/apratmentActions';
 
 const ApartmentType = (props) => {
   return (
     <>
       <div className="flex-container">
-        <Carousel images={props.images} />
+        <Carousel images={props.images} selectApartment={props.selectedApt} />
       </div>
     </>
   );
 };
 
-export default ApartmentType;
+function mapStateToProps(state) {
+  return {
+    selectedApt: state.apartments.selectedApt,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    selectAppartment: (selectedApt) => {
+      dispatch(selectApt({ selectedApt }));
+    },
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ApartmentType);

@@ -14,11 +14,15 @@ const Div = styled.div`
 `;
 
 export default class Carousel extends Component {
-  state = {
-    show: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      show: false,
+    };
+  }
 
   render() {
+    console.log(this.props, this.props.selectApartment);
     const settings = {
       dots: false,
       lazyLoad: true,
