@@ -12,7 +12,7 @@ export default function apiReducer(state = initialState, action) {
       return { ...state, loading: true };
     case CONSTS.FETCH_APARTMENT_SUCCESS:
       return { loading: false, images: action.payload };
-    case CONSTS.FETCH_APARTMENT_SUCCESS:
+    case CONSTS.FETCH_APARTMENT_FAILURE:
       return { loading: false, images: [], error: action.payload };
     default:
       return state;

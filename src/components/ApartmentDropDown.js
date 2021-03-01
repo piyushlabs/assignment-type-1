@@ -42,7 +42,7 @@ class ApartmentDropDown extends Component {
 
 function mapStateToProps(state) {
   return {
-    selectedApt: state.selectedApt,
+    selectedApt: state.apartments.selectedApt,
   };
 }
 

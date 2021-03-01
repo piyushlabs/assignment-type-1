@@ -19,9 +19,7 @@ export const fetchApartment = () => {
 
 export const fetchApartmentSuccess = (images) => ({
   type: CONSTS.FETCH_APARTMENT_SUCCESS,
-  payload: {
-    ...images,
-  },
+  payload: [...images],
 });
 
 export const fetchApartmentRequest = () => ({

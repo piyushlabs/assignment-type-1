@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { fetchApartment } from '../store/actions/asynActions';
 import ApartmentType from '../components/ApartmentType';
 import ApartmentDropDown from '../components/ApartmentDropDown';
-import { setRef } from '@material-ui/core';
 
 function ApartmentComponent({ loading, error, images, fetchApartments }) {
   useEffect(() => {
@@ -27,9 +26,9 @@ function ApartmentComponent({ loading, error, images, fetchApartments }) {
 
 const mapStateToProps = (state) => {
   return {
-    images: state.images,
-    loading: state.loading,
-    error: state.error,
+    images: state.api.images,
+    loading: state.api.loading,
+    error: state.api.error,
   };
 };
 
