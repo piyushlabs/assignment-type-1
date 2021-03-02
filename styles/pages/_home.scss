@@ -37,19 +37,22 @@
   position: relative;
 }
 
-@include respond(tab-land) {
-  .main-container {
-    width: 1170px;
-  }
-}
+// @include respond(tab-land) {
+//   .main-container {
+//     width: 1170px;
+//   }
+// }
 @include respond(tab-port) {
   .main-container {
-    width: 970px;
+    width: 100%;
+    flex-direction: column-reverse;
   }
 }
 
 @include respond(phone) {
   .main-container {
+    width: 100%;
     min-width: 320px;
+    flex-direction: column-reverse;
   }
 }

@@ -54,10 +54,36 @@ export default class Carousel extends Component {
       autoplaySpeed: 6000,
       responsive: [
         {
-          breakpoint: 1300,
+          breakpoint: 900,
           settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '20px',
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 700,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 680,
+          settings: {
+            arrows: false,
+            centerMode: true,
             slidesToShow: 1,
-            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 500,
+          settings: {
+            arrows: false,
+            centerMode: false,
+            slidesToShow: 1,
           },
         },
       ],

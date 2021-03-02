@@ -11,11 +11,6 @@ body {
   padding: 3rem;
 
   @include respond(tab-port) {
-    padding: 0;
+    padding: 1rem;
   }
-}
-
-::selection {
-  background-color: $color-primary;
-  color: $color-white;
 }

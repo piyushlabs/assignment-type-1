@@ -16,10 +16,10 @@ function ApartmentComponent({ loading, error, images, fetchApartments }) {
     <div>
       {images && (
         <div className="main-container">
-          <div className="col-lg-8 col-md-7 col-sm-12 col-xs-12-container">
+          <div className="col-lg-8 col-md-12 col-sm-12 col-xs-12-container">
             <ApartmentType images={images} />;
           </div>
-          <div className="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+          <div className="col-lg-4 col-md-12 col-sm-12 col-xs-12">
             <div className="form-pannel">
               <ApartmentDropDown images={images} />
             </div>
