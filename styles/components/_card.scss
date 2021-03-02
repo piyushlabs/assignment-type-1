@@ -1,0 +1,31 @@
+.property-carousel {
+  .slick-slide {
+    width: 326px;
+    min-width: 250px;
+    max-height: 400px;
+    margin-bottom: 2px;
+    margin-top: 1px;
+  }
+  .slick-active.slick-current {
+    .slick-shadow {
+      border: 1px solid rgb(225, 52, 53);
+    }
+  }
+  .slick-shadow {
+    img {
+      height: 170px;
+    }
+    max-width: 326px;
+    padding: 10px;
+    height: 340px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 12%), 0 1px 2px rgb(0 0 0 / 24%);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    &:hover {
+      box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

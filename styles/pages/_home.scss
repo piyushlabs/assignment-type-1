@@ -1,0 +1,55 @@
+.main-container {
+  width: 1170px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+.feature-box {
+  margin-bottom: 40px;
+  background-color: rgb(246, 248, 248);
+  padding: 0px 20px 30px;
+  margin-top: 30px;
+  font-size: 14px;
+  min-height: 400px;
+  text-align: left;
+  h2 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    font-size: 21px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.form-pannel {
+  max-width: 100%;
+  border: 1px solid rgb(218, 223, 225);
+  background-color: rgb(255, 255, 255);
+  padding: 20px 20px 96px;
+  min-height: 465px;
+  margin-bottom: 25px;
+  margin-top: 0px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+  position: relative;
+}
+
+@include respond(tab-land) {
+  .main-container {
+    width: 1170px;
+  }
+}
+@include respond(tab-port) {
+  .main-container {
+    width: 970px;
+  }
+}
+
+@include respond(phone) {
+  .main-container {
+    min-width: 320px;
+  }
+}

@@ -6,7 +6,8 @@ import { selectApt } from '../store/actions/apratmentActions';
 const ApartmentType = (props) => {
   return (
     <>
-      <div className="flex-container">
+      <div className="flex-container feature-box">
+        <h2>Apartment Type</h2>
         <Carousel images={props.images} selectApartment={props.selectedApt} />
       </div>
     </>

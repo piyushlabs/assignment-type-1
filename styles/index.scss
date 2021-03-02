@@ -1,1 +1,10 @@
 // your sass code here
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/typography';
+@import 'base/base';
+
+@import 'components/card';
+@import 'components/input';
+
+@import 'pages/home';

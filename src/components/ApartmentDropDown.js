@@ -18,7 +18,7 @@ class ApartmentDropDown extends Component {
         <div>
           <label htmlFor="Apartment">Apartment:</label>
           <select
-            className="form-select"
+            className="form-select apt-input"
             name="Apartment"
             id="Apartment"
             onChange={this.handleChange}

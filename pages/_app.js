@@ -7,6 +7,7 @@ import createCache from '@emotion/cache';
 import theme from '../src/theme';
 import '../styles/index.css';
 import '../styles/index.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { withRouter } from 'next/router';
 

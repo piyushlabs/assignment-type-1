@@ -1,0 +1,44 @@
+body {
+  font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: $color-grey-dark;
+}
+
+h4,
+h5,
+h6 {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+h5 {
+  font-size: 14px !important;
+}
+h4,
+.h4 {
+  font-size: 18px !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+.h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
