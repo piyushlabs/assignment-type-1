@@ -27,29 +27,26 @@ export default class Carousel extends Component {
     };
   }
 
-  render() {
-    const {
-      type,
-      price,
-      location,
-      maxResident,
-      beds,
-      bathroom,
-    } = this.props.selectApartment;
-    let count =
-      this.props.images.findIndex(
+  componentDidUpdate(prevProps) {
+    if (prevProps.selectApartment.file != this.props.selectApartment.file) {
+      let count = this.props.images.findIndex(
         (x) => x.file === this.props.selectApartment.file,
-      ) + 1;
-    count = count ? count : 1;
-    console.log(this.props, this.props.selectApartment, count);
+      );
+      count = count ? count : 1;
+      this.slider.slickGoTo(count);
+    }
+  }
+
+  render() {
     const settings = {
       dots: false,
       lazyLoad: true,
+      accesibilty: true,
       infinite: true,
       speed: 500,
       slidesToShow: 2,
       slidesToScroll: 1,
-      initialSlide: count,
+      //initialSlide: count,
       autoplay: false,
       autoplaySpeed: 6000,
       responsive: [
@@ -92,7 +89,11 @@ export default class Carousel extends Component {
     return (
       <>
         <Div className="property-carousel ">
-          <Slider {...settings} className="relative">
+          <Slider
+            {...settings}
+            className="relative"
+            ref={(slider) => (this.slider = slider)}
+          >
             {this.props.images.map((image, id) => (
               <div key={'slide#' + id} class="slick-shadow">
                 <img
