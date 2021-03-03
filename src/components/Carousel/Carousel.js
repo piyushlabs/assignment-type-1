@@ -61,7 +61,7 @@ export default class Carousel extends Component {
           settings: {
             arrows: false,
             centerMode: true,
-            centerPadding: '20px',
+            //centerPadding: '20px',
             slidesToShow: 2,
           },
         },
