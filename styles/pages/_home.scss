@@ -55,5 +55,8 @@
     width: 100%;
     min-width: 320px;
     flex-direction: column-reverse;
+    .feature-box {
+      padding: 0px;
+    }
   }
 }
