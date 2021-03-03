@@ -40,6 +40,7 @@ export default class Carousel extends Component {
   handleClick = (e, id) => {
     e.preventDefault();
     console.log(id);
+    this.slider.slickGoTo(id);
     // console.log(this.slider.slickCurrentSlide());
   };
 
