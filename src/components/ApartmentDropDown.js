@@ -8,7 +8,7 @@ class ApartmentDropDown extends Component {
   }
 
   handleChange = (event) => {
-    this.props.selectAppartment(JSON.parse(event.target.value));
+    this.props.selectAppartment(event.target.value);
   };
 
   render() {
@@ -22,10 +22,11 @@ class ApartmentDropDown extends Component {
             name="Apartment"
             id="Apartment"
             onChange={this.handleChange}
+            value={this.props.selectedApt}
           >
             {images &&
               images.map((apt, i) => (
-                <option key={i} value={JSON.stringify(apt)}>
+                <option key={i} value={apt.file}>
                   {apt.type} &nbsp; {apt.price}
                 </option>
               ))}

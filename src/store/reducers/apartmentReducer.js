@@ -1,7 +1,7 @@
 import { SELECT_APARTMENT } from '../constants';
 
 const initialState = {
-  selectedApt: {},
+  selectedApt: 0,
 };
 
 export default function apartmentReducer(state = initialState, action) {

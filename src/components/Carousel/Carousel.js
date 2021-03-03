@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { selectApt } from '../../store/actions/apratmentActions';
+
 import Slider from 'react-slick';
 import styled from '@emotion/styled';
 import 'slick-carousel/slick/slick.css';
@@ -19,7 +22,7 @@ const Div = styled.div`
   }
 `;
 
-export default class Carousel extends Component {
+class Carousel extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,9 +31,9 @@ export default class Carousel extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.selectApartment.file != this.props.selectApartment.file) {
+    if (prevProps.selectedApt != this.props.selectedApt) {
       let count = this.props.images.findIndex(
-        (x) => x.file === this.props.selectApartment.file,
+        (x) => x.file === +this.props.selectedApt,
       );
       count = count ? count : 1;
       this.slider.slickGoTo(count);
@@ -40,7 +43,8 @@ export default class Carousel extends Component {
   handleClick = (e, id) => {
     e.preventDefault();
     console.log(id);
-    this.slider.slickGoTo(id);
+    //this.slider.slickGoTo(id);
+    this.props.selectAppartment(id);
     // console.log(this.slider.slickCurrentSlide());
   };
 
@@ -106,7 +110,7 @@ export default class Carousel extends Component {
               <div
                 key={'slide#' + id}
                 className="slick-shadow"
-                onClick={(e) => this.handleClick(e, id)}
+                onClick={(e) => this.handleClick(e, image.file)}
               >
                 <img
                   src={httpsWithQuality(image.image_url, 450)}
@@ -145,3 +149,19 @@ export default class Carousel extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    selectedApt: state.apartments.selectedApt,
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    selectAppartment: (selectedApt) => {
+      dispatch(selectApt({ selectedApt }));
+    },
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Carousel);
