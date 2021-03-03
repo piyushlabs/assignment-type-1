@@ -5,7 +5,7 @@ export const fetchApartment = () => {
   return (dispatch) => {
     dispatch(fetchApartmentRequest());
     axios
-      .get('http://localhost:4001/images')
+      .get('https://my-mock-service.herokuapp.com/images')
       .then((response) => {
         const images = response.data;
         dispatch(fetchApartmentSuccess(images));
