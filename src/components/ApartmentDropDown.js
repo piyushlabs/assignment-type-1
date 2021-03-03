@@ -24,8 +24,8 @@ class ApartmentDropDown extends Component {
             onChange={this.handleChange}
           >
             {images &&
-              images.map((apt) => (
-                <option value={JSON.stringify(apt)}>
+              images.map((apt, i) => (
+                <option key={i} value={JSON.stringify(apt)}>
                   {apt.type} &nbsp; {apt.price}
                 </option>
               ))}

@@ -37,6 +37,12 @@ export default class Carousel extends Component {
     }
   }
 
+  handleClick = (e, id) => {
+    e.preventDefault();
+    console.log(id);
+    // console.log(this.slider.slickCurrentSlide());
+  };
+
   render() {
     const settings = {
       dots: false,
@@ -93,9 +99,14 @@ export default class Carousel extends Component {
             {...settings}
             className="relative"
             ref={(slider) => (this.slider = slider)}
+            afterChange={this.afterChangeHandler}
           >
             {this.props.images.map((image, id) => (
-              <div key={'slide#' + id} class="slick-shadow">
+              <div
+                key={'slide#' + id}
+                className="slick-shadow"
+                onClick={(e) => this.handleClick(e, id)}
+              >
                 <img
                   src={httpsWithQuality(image.image_url, 450)}
                   alt={image.filename}
